@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         fontSize: "1.3rem",
         borderTopRightRadius: '1rem',
         borderTopLeftRadius: '1rem',
-        boxShadow: '-5px 8px 21px rgba(0, 0, 0, 0.09)'
+        boxShadow: '-5px 8px 21px rgba(0, 0, 0, 0.09)',
     },
     textbox: {
         width: "90%",
@@ -34,6 +34,16 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         padding: '2rem'
+    },
+    on: {
+        border: 'solid',
+        borderWidth: 1,
+        borderColor: '#000',
+        borderRadius: '0.5rem',
+        width: '5rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 
 })
@@ -47,15 +57,19 @@ function CityInfoBox() {
     return (
         <div className={classes.city_ib}>
             <div className={classes.city_ibnav}>
-                <p style={{
+                <Typography style={{
                     color: '#000',
-                    margin: '1rem 0.2rem'
-                }} onClick={() => setToggle(true)}>
-                    About</p>
-                <p style={{
+                    margin: '1rem 1rem',
+                    cursor: 'pointer',
+                    width: '5rem',
+                }} className={toggle ? classes.on : null} onClick={() => setToggle(true)}>
+                    About</Typography>
+                <Typography style={{
                     color: '#000',
-                    margin: '1rem 0.2rem'
-                }} onClick={() => setToggle(false)}>Event</p>
+                    margin: '1rem 1rem',
+                    cursor: 'pointer',
+                    width: '5rem',
+                }} className={!toggle ? classes.on : null} onClick={() => setToggle(false)}>Event</Typography>
             </div>
             <div className={classes.textbox}>
                 {!toggle &&
