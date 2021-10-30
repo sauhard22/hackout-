@@ -21,7 +21,9 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/">
-            <City />
+            <div>
+              <City />
+            </div>
           </Route>
         </Switch>
         <Footer />

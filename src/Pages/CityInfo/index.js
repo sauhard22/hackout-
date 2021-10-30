@@ -91,7 +91,7 @@ const useStyles = makeStyles({
         height: "20rem",
         backgroundColor: "#D5E0FF",
         marginRight: "0.7rem",
-        borderRadius: "10px",
+        borderRadius: "1rem",
     },
     rightBox: {
         width: "36%",
