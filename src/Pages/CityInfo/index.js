@@ -12,6 +12,8 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import WEBBtn from '../../Components/WEBBtn';
 import calendar from '../../Assets/calendar.svg'
 import group from '../../Assets/group.svg'
+import GroupCard from '../../Components/GroupCard';
+
 
 
 const useStyles = makeStyles({
@@ -100,17 +102,7 @@ const useStyles = makeStyles({
         marginLeft: "0.7rem",
         borderRadius: "10px",
     },
-    exploreBox: {
-        width: "100%",
-        height: "20%",
-        backgroundColor: "#D5E0FF",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: "7px",
 
-    }
 });
 
 function City() {
@@ -193,19 +185,14 @@ function City() {
                         <CityInfoBox />
                     </div>
                     <div className={classes.rightBox}>
-                        <div className={classes.exploreBox}>
-                            <h3>New city ! New people to meet :)</h3>
-                            <WEBBtn
-                                label="Explore"
-                                backgroundColor="#0085FF"
-                                height='2rem'
-                                borderRadius={7}
-                                color="#fff"
-                                style={{
-                                    marginLeft: '1rem',
-                                    fontSize: '1rem'
-                                }}
-                            />
+                        <div className={classes.groupList}>
+                            <h3>Explore</h3>
+                            <GroupCard/>
+                            <GroupCard/>
+
+                        
+
+
                         </div>
                     </div>
                 </div>
