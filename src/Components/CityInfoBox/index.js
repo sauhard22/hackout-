@@ -40,74 +40,84 @@ const useStyles = makeStyles({
 
 
 function CityInfoBox() {
+
+    const [toggle, setToggle] = React.useState(true)
+
     const classes = useStyles()
     return (
         <div className={classes.city_ib}>
             <div className={classes.city_ibnav}>
                 <p style={{
-                    margin: "1rem", backgroundColor: "#fff", color: "rgba(0, 133, 255, 1)", padding: "0.25rem 0.4rem 0.25rem 0.4rem",
-                    border: "0.3px solid #000", borderRadius: "5px",
-                }}>
+                    color: '#000',
+                    margin: '1rem 0.2rem'
+                }} onClick={() => setToggle(true)}>
                     About</p>
                 <p style={{
-                    margin: "1.3rem",
-                }}>Event</p>
+                    color: '#000',
+                    margin: '1rem 0.2rem'
+                }} onClick={() => setToggle(false)}>Event</p>
             </div>
             <div className={classes.textbox}>
-                <div style={{
-                    width: '90%',
-                    backgroundColor: '#efefef',
-                    padding: '1rem',
-                    borderRadius: '1rem'
-                }}>
+                {!toggle &&
                     <div style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'space-between'
+                        width: '90%',
+                        backgroundColor: '#efefef',
+                        padding: '1rem',
+                        borderRadius: '1rem'
                     }}>
-                        <Typography>November 01, 2021</Typography>
                         <div style={{
                             display: 'flex',
                             flexDirection: 'row',
-                            justifyContent: 'center',
-                            alignItems: 'center'
+                            justifyContent: 'space-between'
                         }}>
-                            <img src={nav} alt="nav" />
-                            <Typography style={{
-                                lineHeight: '1rem',
-                                marginLeft: '0.2rem'
-                            }}>Viraj Nagar</Typography>
+                            <Typography>November 01, 2021</Typography>
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}>
+                                <img src={nav} alt="nav" />
+                                <Typography style={{
+                                    lineHeight: '1rem',
+                                    marginLeft: '0.2rem'
+                                }}>Viraj Nagar</Typography>
+                            </div>
                         </div>
-                    </div>
-                    <div style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                    }}>
-                        <Typography>Trekking Event</Typography>
                         <div style={{
-                            backgroundColor: '#ACFFAA',
-                            width: '3rem',
                             display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            borderRadius: '10rem',
-                            padding: '0.2rem',
-                            marginLeft: '1rem'
+                            flexDirection: 'row',
                         }}>
-                            <Typography style={{
-                                fontSize: '0.8rem',
-                                color: '#027B00'
-                            }}>2 days</Typography>
+                            <Typography>Trekking Event</Typography>
+                            <div style={{
+                                backgroundColor: '#ACFFAA',
+                                width: '3rem',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                borderRadius: '10rem',
+                                padding: '0.2rem',
+                                marginLeft: '1rem'
+                            }}>
+                                <Typography style={{
+                                    fontSize: '0.8rem',
+                                    color: '#027B00'
+                                }}>2 days</Typography>
+                            </div>
                         </div>
-                    </div>
-                    <div style={{
-                        marginTop: '0.5rem'
-                    }}>
-                        <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida odio purus nec lectus aliquet. Quam sapien, mus in velit non. Tortor tellus vitae rutrum.</Typography>
-                    </div>
-                </div>
-                
+                        <div style={{
+                            marginTop: '0.5rem'
+                        }}>
+                            <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida odio purus nec lectus aliquet. Quam sapien, mus in velit non. Tortor tellus vitae rutrum.</Typography>
+                        </div>
+                    </div>}
+                {toggle &&
+                    <div>
+                        <Typography>
+                            About
+                        </Typography>
+                    </div>}
             </div>
         </div>
     )
