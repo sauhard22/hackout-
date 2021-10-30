@@ -1,0 +1,24 @@
+.bannerTitle {
+    font-family: Nexa;
+    color: rgb(255, 255, 255);
+}
+  
+.navTitle {
+    font-family: GoodTimes;
+}
+
+.bannerInput::placeholder {
+    color: #B3B3B3
+}
+
+.remove-scroll::-webkit-scrollbar{
+    display:none
+}
+
+
+
+
+::-webkit-input-placeholder {color: #ffffff;} 
+::-moz-placeholder { color: #ffffff;} 
+:-ms-input-placeholder { color: #ffffff;} 
+:-moz-placeholder {color: #ffffff;}  
